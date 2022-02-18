@@ -18,7 +18,7 @@ export async function createNeed(need) {
 
 export async function deleteList(){
     const response = await client
-        .from('todos')
+        .from('need')
         .delete()
         .match({ user_id: client.auth.user().id, });    
     return checkError(response);        
@@ -44,6 +44,14 @@ export async function completeNeed(id) {
     return checkError(response);    
 }
 
+export async function getNeeds() {
+    const response = await client
+        .from ('need')
+        .select()
+        .order('complete')
+        .match({ user_id: client.auth.user().id, });
+    return checkError(response);    
+}
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 export function getUser() {
