@@ -2,7 +2,7 @@ import { checkAuth, completeNeed, createNeed, deleteList, getNeeds, logout } fro
 import { renderList } from '../render-utils.js';
 
 const logoutButton = document.getElementById('logout');
-const form = Document.querySelector('.item-form');
+const form = document.querySelector('.item-form');
 const deleteButton = document.querySelector('.delete');
 const listEl = document.querySelector('.list');
 
@@ -36,8 +36,9 @@ window.addEventListener('load', async () => {
     displayNeeds();
 });
 
-logoutButton.addEventListener('click', () => {
-    logout();
+logoutButton.addEventListener('click', async () => {
+    console.log('click');
+    await logout();
 });
 
 deleteButton.addEventListener('click', async () =>{
