@@ -11,7 +11,7 @@ checkAuth();
 form.addEventListener('submit', async (e) =>{
     e.preventDefault();
     const formData = new FormData(form);
-    const need = formData.get('need');
+    const need = formData.get('item');
 
     await createNeed(need);
 
@@ -23,12 +23,12 @@ async function displayNeeds() {
     const needs = await getNeeds();
     listEl.textContent = '';
     for (let need of needs) {
-        const listEl = renderList(need);
-        listEl.addEventListener('click', async () => {
+        const list = renderList(need);
+        list.addEventListener('click', async () => {
             await completeNeed(need.id);
             displayNeeds();
         });
-        listEl.append(listEl);
+        listEl.append(list);
     }
 }
 

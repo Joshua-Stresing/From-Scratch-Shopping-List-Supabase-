@@ -6,7 +6,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function createNeed(need) {
     const response = await client
 
-        .from('need')
+        .from('shopping')
         .insert({
             need: need,
             complete: false,
@@ -18,7 +18,7 @@ export async function createNeed(need) {
 
 export async function deleteList(){
     const response = await client
-        .from('need')
+        .from('shopping')
         .delete()
         .match({ user_id: client.auth.user().id, });    
     return checkError(response);        
@@ -26,7 +26,7 @@ export async function deleteList(){
 
 export async function getNeed() {
     const response = await client
-        .from('need')
+        .from('shopping')
         .select()
         .order('complete')
         .match({ user_id: client.auth.user().id, });
@@ -35,7 +35,7 @@ export async function getNeed() {
 
 export async function completeNeed(id) {
     const response = await client
-        .from('need')
+        .from('shopping')
         .update({ complete: true })
         .match({
             user_id: client.auth.user().id,
@@ -46,7 +46,7 @@ export async function completeNeed(id) {
 
 export async function getNeeds() {
     const response = await client
-        .from ('need')
+        .from ('shopping')
         .select()
         .order('complete')
         .match({ user_id: client.auth.user().id, });
