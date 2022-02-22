@@ -1,1 +1,9 @@
-/* add home page styles here */
+body {
+    background-color: chartreuse;
+}
+header {
+    text-align: center;
+}
+ul {
+    background-color: darkgreen;
+}
