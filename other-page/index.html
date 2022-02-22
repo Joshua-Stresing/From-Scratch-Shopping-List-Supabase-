@@ -15,18 +15,28 @@
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
-        </div>
-    </header>    
-    <button id="logout">Logout</button>
+        <h1>Make a List.</h1>
+            <button id="logout">Logout</button>
+   </header>
     <main>
-        <h1>You are logged in!</h1>
+        <section>
+            <form class="item-form">
+                <label>
+                    Quantity:
+                    <input type="number" name="quantity" min="0" />
+                </label>
+                <label>
+                    Item:
+                    <input name="item" />
+                </label>
+                <button>Add item</button>
+            </form>
+            <ul class="list">
+                <!-- list items go here -->
+            </ul>
+            <button class="delete">Delete list</button>
+        </section>
     </main>
-    <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
-    </footer>
     <script type="module" src="./other-page.js"></script>
 </body>
-
 </html>

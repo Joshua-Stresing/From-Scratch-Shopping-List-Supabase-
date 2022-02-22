@@ -28,6 +28,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: saddlebrown;
 }
 
 section {
@@ -46,12 +47,10 @@ section {
 }
 
 header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: burlywood;
     height: var(--header-height);
     box-shadow: var(--shadow);
-}
+} 
 
 h2 {
     font-size: 1.8rem;
@@ -128,4 +127,9 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+.complete {
+    text-decoration: line-through;
+    background-color: lightgreen;
 }
